@@ -1,0 +1,38 @@
+saveName():
+
+Pega valor do input
+Se não estiver vazio:
+Atualiza variável
+Salva no localStorage
+Esconde o card
+Atualiza nome na tela
+
+Fluxo visual:
+
+Salvar → Persistir → Atualizar DOM → Esconder card
+-------------
+
+sessions.slice().reverse().slice(0, 5):
+
+slice() → cria cópia do array
+reverse() → coloca mais recente primeiro
+slice(0,5) → pega só os 5 últimos
+
+Depois injeta HTML dinamicamente.
+-------------
+
+Gráfico 01:
+
+type: 'doughnut'
+Mostra distribuição por matéria.
+-------------
+
+Fluxo desejavem:
+
+Usuário adiciona sessão
+→ Array é atualizado
+→ localStorage é atualizado
+→ updateUI()
+    → recalcula total
+    → atualiza histórico
+    → recria gráficos

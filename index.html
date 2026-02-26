@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body>
+
+<main class="container">
+
+    <header class="header">
+        <h1>🚀 Painel de Estudos</h1>
+        <p>Bem-vindo, <span id="userNameDisplay" class="text-destaque">Estudante</span>! Vamos focar</p>
+    </header>
+
+    <!-- CORRIGIDO: hidden escrito corretamente -->
+    <section id="nameConfig" class="card hidden" aria-labelledby="config-title">
+        <label id="config-title" for="nameInput">Como você quer ser chamado?</label>
+        <div class="input-group">
+            <input type="text" id="nameInput" placeholder="Seu nome...">
+            <button onclick="saveName()" class="btn btn-primary">Salvar</button>
+        </div>
+    </section>
+
+    <div class="grid-layout">
+
+        <section class="card h-fit" aria-labelledby="form-title">
+            <h2 id="form-title">📝 Registrar Sessão</h2>
+
+            <form id="studyForm" onsubmit="addSession(event)">
+                <div class="form-group">
+                    <label for="subject">Matéria - Assunto</label>
+                    <input type="text" id="subject" required placeholder="Ex: React, Física, Inglês...">
+                </div>
+
+                <div class="form-group">
+                    <label for="hours">Tempo (em horas)</label>
+                    <input type="number" step="0.1" id="hours" required placeholder="Ex: 1.5">
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Data</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <!-- CORRIGIDO: btn-success -->
+                <button type="submit" class="btn btn-success btn-block">
+                    Registrar estudo (+XP)
+                </button>
+            </form>
+
+            <div class="total-box">
+                <h3>Total Acumulado</h3>
+                <output id="totalHoursDisplay">0h</output>
+            </div>
+        </section>
+
+        <div class="charts-column">
+
+            <section class="card">
+                <h2>Distribuição por Matéria</h2>
+                <div class="chart-wrapper">
+                    <canvas id="subjectChart"></canvas>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Evolução Diária</h2>
+                <div class="chart-wrapper">
+                    <canvas id="evolutionChart"></canvas>
+                </div>
+            </section>
+
+            <section class="card">
+                <header class="history-header">
+                    <h2>Histórico Recente</h2>
+                    <button onclick="clearData()" class="btn-text-danger">Limpar Tudo</button>
+                </header>
+                <ul id="historyList" class="history-list"></ul>
+            </section>
+
+        </div>
+    </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script> <!-- ATIVADO -->
+</body>
+</html>

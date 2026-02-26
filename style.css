@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Impede que padding quebre o tamanho das caixas */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    color: #374151;
+    padding: 24px;
+}
+
+.container {
+    max-width: 1152px;
+    margin: 0 auto; /* Centraliza o site na tela */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.header h1 {
+    font-size: 36px;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+/* Criando o Grid (Telas grandes dividem em proporção 1 para 2) */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* Padrão mobile: 1 coluna */
+    gap: 24px;
+}
+
+@media (min-width: 1024px) {
+    .grid-layout {
+        grid-template-columns: 1fr 2fr; /* PC: 1 terço pra esquerda, 2 terços pra direita */
+    }
+}
+
+.charts-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+.card {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #1f2937;
+}
+
+.h-fit { height: fit-content; }
+.hidden { display: none !important; }
+.text-destaque { font-weight: bold; color: #4f46e5; }
+
+#nameConfig {
+    margin-bottom: 24px;
+}
+
+
+
+/* Formulários */
+.form-group { margin-bottom: 16px; }
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Botões */
+.btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary { background-color: #4f46e5; color: white; }
+.btn-primary:hover { background-color: #4338ca; }
+
+.btn-success { background-color: #16a34a; color: white; }
+.btn-success:hover { background-color: #15803d; transform: translateY(-2px); }
+
+.btn-block { width: 100%; padding: 12px; font-size: 16px; }
+
+.btn-text-danger {
+    background: none; border: none;
+    color: #ef4444; font-size: 12px;
+    cursor: pointer;
+}
+.btn-text-danger:hover { text-decoration: underline; }
+
+/* Caixa de Total */
+.total-box {
+    margin-top: 32px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+}
+
+.total-box h3 {
+    color: #6b7280; font-size: 12px;
+    text-transform: uppercase; margin-bottom: 4px;
+}
+
+.total-box output {
+    display: block; /* Garante que ocupe a linha toda igual o <p> fazia */
+    font-size: 30px; 
+    font-weight: bold; 
+    color: #1f2937;
+}
+
+/* Área dos Gráficos */
+.chart-wrapper {
+    height: 256px;
+    position: relative;
+}
+
+/* Lista de Histórico */
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.history-list { list-style: none; }
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.history-item span small { color: #9ca3af; }
+
+/* A "Tag" que mostra as horas */
+.badge-hours {
+    background-color: #e0e7ff;
+    color: #3730a3;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+:root {
+/* Cores do Gráfico de Rosca (Matérias) */
+    --cor-1: #4F46E5;
+    --cor-2: #10B981;
+    --cor-3: #F59E0B;
+    --cor-4: #EF4444;
+    --cor-5: #8B5CF6;
+    --cor-6: #EC4899;
+    
+/* Cor do Gráfico de Barras (Evolução) */
+    --cor-barras: #6366F1;
+}

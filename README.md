@@ -6,9 +6,12 @@ Web application for study tracking and gamification. Allows users to log study s
 
 👉 [Try Estudo XP](https://fredson-sy.github.io/XPStudy/)
 
-## 📸 Screenshot
+## 📸 Screenshots
 
-![Estudo XP in use](img/screenshot.png)
+<p align="center">
+  <img src="img/dashboard-overview.png" width="48%">
+  <img src="img/charts-view.png" width="48%">
+</p>
 
 ## ✨ Features
 
